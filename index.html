@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Library</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+      }
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+  </head>
+  <body>
+    <h1>競技プログラミングのためのライブラリ</h1>
+    <h3>計算幾何学</h3>
+    <ul>
+      <li><a href="./Geometry/geometry.cpp">計算幾何学の基本（点，直線，多角形，凸法など）</a></li>
+    </ul>
+    <h3>数学</h3>
+    <ul>
+      <li><a href="./Math/power.cpp">繰り返し二乗法</a></li>
+      <li><a href="./Math/FFT.cpp">高速フーリエ変換</a></li>
+      <li><a href="./Math/mod.cpp">$\mathbb{Z}/n\mathbb{Z}$</a></li>
+      <li><a href="./Math/mod_poly.cpp">$\mathbb{Z}/n\mathbb{Z}$上の多項式の掛け算</a></li>
+      <li><a href="./Math/fraction.cpp">$\mathbb{Q}$</a></li>
+      <li><a href="./Math/matrix.cpp">行列</a></li>
+      <li><a href="./Math/Smith_normal_form.cpp">整数係数行列のSmith標準形</a></li>
+      <li><a href="./Math/simplicial_homology.cpp">単体ホモロジー</a></li>
+      <li><a href="./Math/combination.cpp">組合せの基本</a></li>
+      <li><a href="./Math/symmetric_group.cpp">対称群$\mathfrak{S}_n$（共役類に含まれる元の個数（Cauchyの公式 $h(\mathfrak{S}_n:(j))$ ，共役類の型の列挙 ）</a></li>
+      <li><a href="./Math/Catalan_number.cpp">カタラン数</a></li>
+      <li><a href="./Math/Montmort_number.cpp">モンモール数（完全順列の総数）</a></li>
+      <li><a href="./Math/Bell_number.cpp">ベル数（n個のものを分割する方法の総数）</a></li>
+      <li><a href="./Math/Perrin_number.cpp">ペラン数</a></li>
+      <li><a href="./Math/Fibonacci_number.cpp">フィボナッチ数</a></li>
+      <li><a href="./Math/gcdlcm.cpp">最大公約数，最小公倍数，拡張ユークリッドの互除法</a></li>
+      <li><a href="./Math/prime.cpp">素数（エラトステネスの篩，素数判定）</a></li>
+      <li><a href="./Math/Faulhaber_formula.cpp">ファウルハーバーの公式（最初の$n$個の$k$乗和を$\mathcal{O}( k^2 \log{k} )$ぐらいで求める）</a></li>
+      <li><a href="./Math/Pick_theorem.cpp">ピックの定理</a></li>
+    </ul>
+    <h3>動的計画法</h3>
+    <ul>
+      <li><a href="./DP/Knuth_Yao_speedup.cpp">Knuth-Yaoの高速化</a></li>
+    </ul>
+    <h3>文字列</h3>
+    <ul>
+      <li><a href="./String/suffix_array.cpp">接尾辞配列</a></li>
+      <li><a href="./String/rolling_hash.cpp">ローリングハッシュ</a></li>
+      <li><a href="./String/aho_corasick.cpp">Aho-Corasick法</a></li>
+    </ul>
+    <h3>データ構造</h3>
+    <ul>
+      <li><a href="./Data_Structure/kd_tree.cpp">平衡kD木（領域探索）</a></li>
+      <li><a href="./Data_Structure/union_find.cpp">Union-Find 木</a></li>
+      <li><a href="./Data_Structure/segment_tree.cpp">Segment 木</a></li>
+      <li><a href="./Data_Structure/segment_tree_lazy.cpp">遅延評価 Segment 木</a></li>
+    </ul>
+    <h3>グラフ（重みなし）</h3>
+    <ul>
+      <li><a href="./Graph/lowlink.cpp">Lowlink</a></li>
+      <li><a href="./Graph/articulation_points.cpp">関節点列挙</a></li>
+      <li><a href="./Graph/bridges.cpp">橋列挙</a></li>
+      <li><a href="./Graph/LCA.cpp">最小共通祖先</a></li>
+      <li><a href="./Graph/SCC.cpp">強連結成分分解</a></li>
+    </ul>
+    <h3>ネットワーク</h3>
+    <ul>
+      <li><a href="./Network/shortest_path.cpp">最短経路（ダイクストラ，ベルマンフォード，ワーシャルフロイド）</a></li>
+      <li><a href="./Network/max_flow.cpp">最大流（フォード・ファルカーソン）</a></li>
+      <li><a href="./Network/min_cost_flow.cpp">最小費用流</a></li>
+      <li><a href="./Network/bipartite_matching.cpp">二部グラフの最大マッチング，最小点カバー，最大独立集合</a></li>
+      <li><a href="./Network/spanning_tree.cpp">最小全域木</a></li>
+    </ul>
+    <h3>グラフの数え上げ</h3>
+    <ul>
+      <li>非標識閉路グラフの異なる極大独立集合の個数→ペラン数</li>
+      <li>正則な2分木の個数→カタラン数</li>
+      <li><a href="./Graph_Counting/graph_counting.cpp">ヘッダ</a></li>
+      <li><a href="./Graph_Counting/count_spanning_tree.cpp">全域木の数え上げ</a></li>
+      <li><a href="./Graph_Counting/labeled_graph.cpp">標識グラフの数え上げ</a></li>
+      <li><a href="./Graph_Counting/labeled_connected_graph.cpp">標識連結グラフの数え上げ</a></li>
+      <li><a href="./Graph_Counting/labeled_even_graph.cpp">標識偶グラフの数え上げ</a></li>
+      <li><a href="./Graph_Counting/labeled_tree.cpp">標識木の数え上げ</a></li>
+      <li><a href="./Graph_Counting/labeled_block.cpp">標識ブロックの数え上げ</a></li>
+      <li><a href="./Graph_Counting/graph.cpp">非標識グラフの数え上げ</a></li>
+    </ul>
+    <h3>区間</h3>
+    <ul>
+      <li><a href="./Interval/interval.cpp">区間クラス</a></li>
+      <li><a href="./Interval/scheduling.cpp">区間スケジューリング問題</a></li>
+    </ul>
+  </body>
+</html>
