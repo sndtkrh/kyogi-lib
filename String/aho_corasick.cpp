@@ -57,7 +57,18 @@ struct PMA{
       }
     }
   }
-  vector< int > match( string str ){
+  // strを最後まで見たときの最終的なPMAnodeを返す
+  PMAnode * match( string str ){
+    PMAnode * t = &root;
+    for( char c : str ){
+      while( t->next[c] == nullptr ) t = t->fail;
+      t = t->next[c];
+    }
+    return t;
+  }
+  // strでマッチしたパターンの種類と回数を返す
+  // res[i] := パターン文字列ps[i]のstrにおける出現回数
+  vector< int > match_n( string str ){
     vector<int> res( n_pat, 0 );
     PMAnode * t = &root;
     for( char c : str ){
