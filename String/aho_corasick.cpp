@@ -57,6 +57,12 @@ struct PMA{
       }
     }
   }
+  PMAnode * one_step( PMAnode * pmanode, char c ){
+    PMAnode * t = pmanode;
+    while( t->next[c] == nullptr ) t = t->fail;
+    t = t->next[c];
+    return t;
+  }
   // strを最後まで見たときの最終的なPMAnodeを返す
   PMAnode * match( string str ){
     PMAnode * t = &root;
