@@ -6,9 +6,7 @@
  */
 #ifndef SEGTREE
 #define SEGTREE
-#include <algorithm>
-#include <vector>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 // RMQ 用
 // SegmentTree<long long, RMQ> rmq(n, RMQ(INF) );
@@ -19,6 +17,15 @@ public:
   RMQ(){;}
   RMQ(T inf) : dflt(inf) {;}
   T merge  (T a, T b){ return min(a, b); }
+  T update (T &node, T v){ node = v; }
+};
+
+template <typename T = long long>
+class SUM{
+public:
+  T dflt;
+  SUM(){dflt = 0;}
+  T merge  (T a, T b){ return a+b; }
   T update (T &node, T v){ node = v; }
 };
 
@@ -34,7 +41,8 @@ public:
     while(N < n) N *= 2;
     tree.resize( 2 * N - 1, updater.dflt);
   }
-  SegmentTree(int n, Updater f, vector<T> &vs) : updater(f) { // vsで初期化
+  SegmentTree(vector<T> &vs, Updater f) : updater(f) { // vsで初期化
+    int n = vs.size();
     N = 1;
     while(N < n) N *= 2;
     tree.resize( 2 * N - 1, updater.dflt );
@@ -61,6 +69,7 @@ public:
   }
   T query(int a, int b){ return query(a, b, 0, 0, N); }
 };
+
 /* test
 int main(){
   int n, q;
